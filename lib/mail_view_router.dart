@@ -2,7 +2,6 @@ import 'package:animations/animations.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:reply/custom_transition_page.dart';
 
 import 'home.dart';
 import 'inbox.dart';
@@ -16,16 +15,11 @@ class MailViewRouterDelegate extends RouterDelegate<void>
 
   @override
   Widget build(BuildContext context) {
-    bool handlePopPage(Route<dynamic> route, dynamic result) {
-      return false;
-    }
-
     return Selector<EmailStore, String>(
       selector: (context, emailStore) => emailStore.currentlySelectedInbox,
       builder: (context, currentlySelectedInbox, child) {
         return Navigator(
           key: navigatorKey,
-          onPopPage: handlePopPage,
           pages: [
             FadeThroughTransitionPageWrapper(
               transitionKey: ValueKey(currentlySelectedInbox),

@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import 'package:animations/animations.dart';
 
 import 'colors.dart';
-import 'home.dart';
 import 'mail_view_page.dart';
 import 'model/email_model.dart';
 import 'model/email_store.dart';
@@ -45,7 +44,6 @@ class MailPreviewCard extends StatelessWidget {
         ).currentlySelectedInbox ==
         'Starred';
 
-    // TODO: Add Container Transform transition from email list to email detail page (Motion)
     return _OpenContainerWrapper(
       id: id,
       email: email,
